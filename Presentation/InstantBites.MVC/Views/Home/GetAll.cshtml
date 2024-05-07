@@ -1,0 +1,389 @@
+﻿@using InstantBites.Application.Features.Queries.Orders.GetAllOrders
+@model GetAllOrdersQueryResponse
+@inject UserManager<Client> UserManager
+
+<div class="mainContainer">
+    <div id="filtering">
+        <div id="filteringContext">
+            <div>
+                <div class="slideActivate">
+                    <span>Restaurants</span>
+                    <iconify-icon class="rotate2" icon="material-symbols:arrow-forward-ios-rounded"></iconify-icon>
+                </div>
+                <ul class="slide">
+                    @foreach (var item in ViewBag.Restaurants)
+                    {
+                        <li id="@item.Id">@item.Name</li>
+                    }
+                </ul>
+            </div>
+            <div>
+                <div class="slideActivate">
+                    <span>Categories</span>
+                    <iconify-icon class="rotate2" icon="material-symbols:arrow-forward-ios-rounded"></iconify-icon>
+                </div>
+                <ul class="slide">
+                    @foreach (var item in ViewBag.OrderCategory)
+                    {
+                        <li id="@item.Id">@item.Name</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="containerr">
+        <h1 id="Menu">Menus</h1>
+        <div id="menus">
+            @foreach (var order in Model.Orders)
+            {
+
+                <div class="order">
+                    <img src="@order.SignedUrl" />
+                    <div class="orderContext">
+                        <h4>@order.Name</h4>
+                        <span>@order.Price $</span>
+                    </div>
+                    <p class="rId" style="display:none">@order.RestaurantId</p>
+                    <p class="cId" style="display:none">@order.CategoryId</p>
+                    <p style="display:none">@order.Id</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="pop">
+
+    <div class="mainImg">
+        <div class="heading">
+            <iconify-icon class="x" icon="mdi:alpha-x-circle-outline"></iconify-icon>
+            <h2></h2>
+        </div>
+    </div>
+    <div class="properties">
+        <div>
+            <span>Total Price</span>
+            <span id="price"></span>
+        </div>
+        <div>
+            <span>Category</span>
+            <span id="category"></span>
+        </div>
+        <div>
+            <span>Delivery Fee</span>
+            <span id="delivery"></span>
+        </div>
+    </div>
+    <hr />
+    <div class="desc">
+        <h2>Description</h2>
+        <p></p>
+    </div>
+    <hr />
+    <div class="orderRest">
+        <h2>Restaurant - <span></span></h2>
+        <div class="restContainer">
+            <p></p>
+            <img />
+        </div>
+    </div>
+    <hr />
+    <div class="meals">
+        <h2>Meals Included</h2>
+        <div>
+        </div>
+    </div>
+    <button id="sub" class="viewBtn">Subscribe for this package</button>
+
+</div>
+
+<div class="mealInfo">
+    <header>
+        <h1>Meal Info</h1>
+        <iconify-icon class="x" icon="mdi:alpha-x-circle-outline"></iconify-icon>
+    </header>
+    <img />
+    <span id="name"></span>
+    <hr />
+    <label>Calories:</label>
+    <span id="cal"></span>
+    <hr />
+    <label>Weight:</label>
+    <span id="weight"></span>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+
+        $('.containerr').css({
+            'width': '100%',
+            'minHeight': '100vh',
+            'justifyContent': 'start'
+        })
+
+        $('body').prepend("<div id='popContainer'></div>")
+
+        const popBg = $('#popContainer')
+        const pop = $('.pop')
+        const x = $('.x')
+
+        x.css({
+            'cursor': 'pointer'
+        })
+
+        popBg.prepend(pop)
+
+        popBg.hide()
+        pop.hide()
+
+        pop.css({
+            'zIndex': 10000
+        })
+
+        popBg.css({
+            'zIndex': 1000
+        })
+
+        $('main').css({
+            'backgroundColor': '#f8f8f8'
+        })
+
+        $('#sub').click(function () {
+            let id = $(this).parent().children().last().text()
+            console.log(id)
+            if (@User.Identity.IsAuthenticated.ToString().ToLower()) {
+                console.log("auth")
+                $.ajax({
+                    url: `https://localhost:7254/home/subscribe/`,
+                    type: 'get',
+                    datatype: 'json',
+                    cache: false,
+                    data: { 'orderId': id },
+                    success: function (res) {
+                        //console.log(res)
+                        popBg.hide()
+                        pop.hide()
+                        console.log(res.success)
+                        console.log(res.message)
+                        window.location.href = `../Home/Result?Success=${res.success}&Message=${res.message}`;
+
+                    },
+                    error: function (xhr, ajaxoptions, thrownerror) {
+                        console.log(xhr)
+                        console.log(ajaxoptions)
+                        console.log(thrownerror)
+                    }
+                });
+            }
+            else {
+                console.log("no auth")
+                window.location.href = `../account/login?ReturnUrl=../Home/Subscribe?orderId=${id}`;
+                console.log(@ViewBag.msg)
+            }
+
+        })
+
+        $('.pop .x').click(function () {
+            popBg.hide()
+            pop.hide()
+        })
+
+        $('.order').click(function () {
+            let id = $(this).children().last().text()
+            pop.append(`<p style="display: none">${id}</p>`)
+            $.ajax({
+                url: `https://localhost:7254/home/get/${id}`,
+                type: 'get',
+                datatype: 'json',
+                cache: false,
+                data: { 'id': id },
+                success: function (res) {
+                    console.log(res)
+
+                    popBg.show()
+                    pop.show()
+
+                    $('.pop .mainImg').css({
+                        'background-image': `url('${res.order.signedUrl}')`
+                    })
+
+                    $('#price').text(res.order.price + '$')
+                    $('#category').text(res.order.category.name)
+                    $('#delivery').text(res.shipping + '$')
+
+                    $('.orderRest h2 span').text(res.order.restaurant.name)
+                    $('.orderRest img').attr("src", res.order.restaurant.signedUrl)
+                    $('.orderRest p').text(res.order.restaurant.description)
+
+                    $('.mainImg h2').text(res.order.name)
+
+                    $('.desc p').text(res.order.description)
+
+                    pop.css({
+                        'display': 'flex'
+                    })
+
+                    $('.meals div').empty()
+                    for (let i = 0; i < res.meals.length; i++) {
+                        $('.meals > div').append(
+                            `<div class="meal"> <img src="${res.meals[i].signedUrl}" /> <div><span>${res.meals[i].name}</span></div><span style="display:none">${res.meals[i].id}</span></div>`
+                        )
+
+                    }
+
+                    $('.mealInfo .x').click(function () {
+                        $('.mealInfo').hide()
+                    })
+
+                    $('.meal').click(function () {
+                        let id = $(this).children().last().text()
+
+                        popBg.append($('.mealInfo'))
+                        $.ajax({
+                            url: `https://localhost:7254/home/getmeal/`,
+                            type: 'get',
+                            datatype: 'json',
+                            cache: false,
+                            data: { 'id': id },
+                            success: function (res) {
+                                console.log(res)
+                                $('.mealInfo img').attr('src', res.meal.signedUrl)
+                                $('.mealInfo #name').text(res.meal.name)
+                                $('.mealInfo #cal').text(`${res.meal.calories} kCal`)
+                                $('.mealInfo #weight').text(`${res.meal.weight} gram`)
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                console.log(xhr)
+                                console.log(ajaxOptions)
+                                console.log(thrownError)
+                            }
+                        });
+                        $('.mealInfo').css({
+                            'display': 'flex',
+                            'zIndex': '11000'
+                        })
+                    })
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr)
+                    console.log(ajaxOptions)
+                    console.log(thrownError)
+                }
+            });
+        })
+
+        //$('.slideActivate').click(function () {
+
+        //});
+        $('.slideActivate').on("click", function (event) {
+            $(this).next().slideToggle()
+            $(this).children().last().toggleClass('rotate');
+            $(this).children().last().toggleClass('rotate2');
+        });
+
+        var rId
+
+        $('.slide').eq(0).children().click(function () {
+            rId = $(this).attr('id')
+            console.log(rId)
+            console.log(cId)
+
+            $('#menus').children().hide()
+
+            if ($(this).css('color') == 'rgb(6, 122, 70)') {
+                rId = undefined
+                $(this).css('color', 'black')
+                if (cId !== undefined)
+                    $('#menus').children().each(function () {
+                        if ($(this).children().eq(3).text() == cId) {
+                            $(this).show()
+                        }
+                    })
+                else
+                    $('#menus').children().show()
+                return
+            }
+
+            $(this).css({
+                'color': '#067a46'
+            })
+
+            $(this).siblings().css({
+                'color': 'black'
+            })
+
+            $('#menus').children().each(function () {
+                if (cId !== undefined) {
+                    console.log('if1')
+
+                    if ($(this).children().eq(2).text() == rId && $(this).children().eq(3).text() == cId) {
+                        $(this).show()
+                    }
+                }
+                else {
+                    if ($(this).children().eq(2).text() == rId) {
+                        $(this).show()
+                    }
+
+                }
+
+            })
+
+        })
+
+        var cId
+
+        $('.slide').eq(1).children().click(function () {
+            cId = $(this).attr('id')
+            console.log(rId)
+            console.log(cId)
+
+            $('#menus').children().hide()
+
+            if ($(this).css('color') == 'rgb(6, 122, 70)') {
+                cId = undefined
+                $(this).css('color', 'black')
+                if (rId !== undefined)
+                    $('#menus').children().each(function () {
+                        if ($(this).children().eq(2).text() == rId) {
+                            $(this).show()
+                        }
+                    })
+                else {
+                    $('#menus').children().show()
+                    console.log('allshow')
+                }
+                return
+            }
+
+            $(this).css({
+                'color': '#067a46'
+            })
+
+            $(this).siblings().css({
+                'color': 'black'
+            })
+
+            $('#menus').children().each(function () {
+                if (rId !== undefined) {
+                    console.log('if2')
+                    if ($(this).children().eq(2).text() == rId && $(this).children().eq(3).text() == cId) {
+                        $(this).show()
+                    }
+                }
+                else {
+
+                    console.log('else2')
+                    if ($(this).children().eq(3).text() == cId) {
+                        $(this).show()
+                    }
+                }
+            })
+        })
+    })
+</script>

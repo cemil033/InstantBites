@@ -1,0 +1,243 @@
+﻿@using InstantBites.Domain.Entites;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Client> SignInManager
+@inject UserManager<Client> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/reset.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/main-layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InstantBites.MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div>
+                <a asp-action="Index" asp-controller="Home">
+                    <img id="logo" src="~/images/logo.png" />
+                </a>
+
+                <ul class="pages">
+                    <li><a asp-action="GetAll" asp-controller="Home">Our Menus</a></li>
+                    <li><a asp-action="About" asp-controller="Home">How It Works</a></li>
+                    <li><a asp-action="Restaurants" asp-controller="Home">Restaurants</a></li>
+                </ul>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div id="account">
+
+                    <a id="notifs">
+                        <iconify-icon icon="ri:notification-4-fill"></iconify-icon>
+                    </a>
+                    <a id="cart">
+                        <iconify-icon icon="material-symbols:shopping-cart"></iconify-icon>
+                    </a>
+                    <div class="logged">
+                        @if (UserManager.GetUserAsync(User).Result.SignedUrl != null)
+                        {
+                            <a asp-action="GetInfo" asp-controller="Account">
+                                <img src="@UserManager.GetUserAsync(User).Result.SignedUrl" />
+
+                            </a>
+                        }
+                        <div class="acc">
+                            <span>@User.Identity.Name</span>
+                            <a asp-action="LogOut" asp-controller="Account">
+                                <iconify-icon icon="uil:exit"></iconify-icon>
+                                <span>log out</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" id="logBtn">Log in</a>
+            }
+        </div>
+    </header>
+    <main role="main">
+        @RenderBody()
+        <div id="ordersPop" style="display: none">
+            <header>
+                <h1>Your Subscribed Packages</h1>
+                <iconify-icon class='x' icon='mdi:alpha-x-box'></iconify-icon>
+            </header>
+            <div class="ordersContent">
+            </div>
+        </div>
+        <div id="notifsPop" style="display: none">
+            <header>
+                <h1>Notifications</h1>
+                <button id="notifClear" class="viewBtn">clear all</button>
+                <iconify-icon class='x' icon='mdi:alpha-x-box'></iconify-icon>
+            </header>
+            <div class="notifsContent">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div id="links">
+                <span>&copy; InstantBites 2023</span>
+                <a>Terms and Conditions</a>
+                <a>Privacy</a>
+            </div>
+
+            <div id="social">
+                <iconify-icon icon="ic:baseline-facebook"></iconify-icon>
+                <iconify-icon icon="uil:instagram-alt"></iconify-icon>
+                <iconify-icon icon="mdi:twitter"></iconify-icon>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    const pop = $('#ordersPop')
+    const nPop = $('#notifsPop')
+    $('.x').click(function () {
+        pop.hide()
+        nPop.hide()
+    })
+    $('#cart').click(function () {
+        $.ajax({
+            url: `https://localhost:7254/account/GetSubscribedOrders/`,
+            type: 'get',
+            datatype: 'json',
+            cache: false,
+            success: function (orders) {
+                console.log(orders)
+                pop.show();
+                nPop.hide();
+                $('main').css({
+                    'position': 'relative'
+                })
+                //$('#ordersPop').find('*').not('header').remove();
+                $('.ordersContent').empty()
+                orders.forEach(function (e, i) {
+                    console.log(e)
+
+                    let date = new Date(e.lastSubscribedTime.substring(0, 10))
+                    date.setDate(date.getDate() + 30)
+
+                    $('.ordersContent').append(
+                        `<div class="row">
+                            <div class="imgContainer">
+                                <img src="${e.order.signedUrl}"/>
+                            </div>
+                            <div class="nameContainer">
+                                <span>${e.order.name}</span>
+                                <span>Till ${date.toLocaleDateString()}</span>
+                            </div>
+                            <div class="priceContainer">
+                                <span>Price:</span>
+                                <span>${e.order.price + e.shipping}$</span>
+                            </div>
+                            <button id="unsub" class='viewBtn'>Unsubscribe</button>
+                            <p style="display:none">${e.order.id}</p>
+                        </div>
+                        `
+                    )
+                    if (orders.length - 1 > i) {
+                        $('.ordersContent').append("<hr/>")
+                    }
+                })
+                $('#unsub').click(function () {
+                    let oId = $(this).parent().children().last().text()
+                    $.ajax({
+                        url: `https://localhost:7254/home/StopSubscribe`,
+                        type: 'get',
+                        datatype: 'json',
+                        cache: false,
+                        data: { 'id': oId },
+                        success: function () {
+                            window.location.href = `../Home/Result?Success=true&Message=Your subscription is canceled`;
+                        },
+                        error: function (xhr, ajaxoptions, thrownerror) {
+                            console.log(xhr)
+                            console.log(ajaxoptions)
+                            console.log(thrownerror)
+                        }
+                    })
+                })
+            },
+            error: function (xhr, ajaxoptions, thrownerror) {
+                console.log(xhr)
+                console.log(ajaxoptions)
+                console.log(thrownerror)
+            }
+        });
+    })
+    $('#notifs').click(function () {
+        $.ajax({
+            url: `https://localhost:7254/account/Notifications/`,
+            type: 'get',
+            datatype: 'json',
+            cache: false,
+            success: function (notifs) {
+                console.log(notifs)
+                nPop.show();
+                pop.hide()
+
+                $('.notifsContent').empty()
+
+                notifs.forEach(function (e, i) {
+                    console.log(e)
+
+                    $('.notifsContent').append(
+                        `<div class="nRow">
+                                            <div class="msgContainer">
+                                                <span>${e.message}</span>
+                                            </div>
+                                        </div>
+                                        `
+                    )
+
+                })
+
+                $('#notifClear').click(function () {
+                    $.ajax({
+                        url: `https://localhost:7254/account/ClearNotfications`,
+                        type: 'get',
+                        datatype: 'json',
+                        cache: false,
+                        success: function (orders) {
+                            $('.notifsContent').empty()
+                        },
+                        error: function (xhr, ajaxoptions, thrownerror) {
+                            console.log(xhr)
+                            console.log(ajaxoptions)
+                            console.log(thrownerror)
+                        }
+                    })
+                })
+            },
+            error: function (xhr, ajaxoptions, thrownerror) {
+                console.log(xhr)
+                console.log(ajaxoptions)
+                console.log(thrownerror)
+            }
+        })
+    })
+
+
+</script>

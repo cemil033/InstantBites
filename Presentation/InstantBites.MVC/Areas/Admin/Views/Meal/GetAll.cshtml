@@ -1,0 +1,179 @@
+﻿@model AddMealCommandRequest
+
+
+<div id="cards">
+
+    <div class="containerr">
+        <div class="card">
+
+
+            <div class="contentBx">
+                <p class="add">+</p>
+
+            </div>
+
+        </div>
+    </div>
+    @foreach (var meal in ViewBag.Meals)
+    {
+        <div class="containerr">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="@meal.SignedUrl">
+                </div>
+
+                <div class="contentBx">
+
+                    <h2>@meal.Name</h2>
+                    <a class="editBtn">Edit</a>
+                    <p style="display:none">@meal.Id</p>
+                    <a asp-route-controller="Meal" asp-route-action="Delete" asp-route-id="@meal.Id">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+<div class='form popup' style="display:none">
+    <form id="pop-form" asp-area="Admin" method="post" asp-controller="Meal" asp-action="Add" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class='title'>
+            <span>Edit</span>
+            <iconify-icon id='x-icon' icon='mdi:alpha-x-box'></iconify-icon>
+        </div>
+        <div class='subtitle'>Meal</div>
+        <div class='input-container ic1'>
+            <input asp-for="Name" id='name' class='input' type='text' placeholder=' ' />
+            <div class='cut'></div>
+            <label for='name' class='placeholder'>Name</label>
+        </div>
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <div class="inputRow">
+            <img id="popImg" />
+            <div class='input-container ic2'>
+                <input asp-for="Image" id='imgurl' accept="image/png, image/gif, image/jpeg, image/avif" class='input' type="file" placeholder=' '>
+                <div class='cut'></div>
+                <label for='imgurl' class='placeholder'>Image URL</label>
+            </div>
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+        <div class='input-container ic2'>
+            <input asp-for="Calories" id='calories' class='input' type='text' placeholder=' ' />
+            <div class='cut'></div>
+            <label for='calories' class='placeholder'>Calories</label>
+        </div>
+        <span asp-validation-for="Calories" class="text-danger"></span>
+        <div class='input-container ic2'>
+            <input asp-for="Weight" id='weight' class='input' type='text' placeholder=' '>
+            <div class='cut'></div>
+            <label for='weight' class='placeholder'>Weight</label>
+        </div>
+        <span asp-validation-for="Weight" class="text-danger"></span>
+        <select class="select" tabindex="1" asp-items="ViewBag.MealCategoryId" asp-for="MealCategoryID">
+        </select>
+        <button class='submit'>submit</button>
+    </form>
+</div>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+
+  
+    $('body').prepend("<div id='popup-bg'></div>")
+    const popupBg = $("#popup-bg")
+    const x = $('#x-icon')
+    popup = $('.popup')
+
+    popup.hide();
+    popup.css({
+        zIndex: 100000,
+    })
+    popupBg.css({
+        backgroundColor: 'rgb(211, 211, 211,0)',
+        width: '100%',
+        height: '100%',
+        zIndex: 10000
+    })
+    popupBg.hide()
+    popupBg.prepend(popup)
+
+    x.click(function () {
+        popupBg.hide()
+    })
+
+    const add = $('.add')
+    add.click(function () {
+
+        $('#pop-form').attr('action', '/Admin/Meal/Add')
+        popupBg.show()
+
+        $('.text-danger').val("").text("")
+
+        $('.title span').text("Add")
+        $('#popImg').hide()
+        $('#name').val("")
+        $('#imgurl').val("")
+        $('#calories').val("")
+        $('#weight').val("")
+        popup.show()
+    })
+
+    const edit = $('.editBtn')
+
+    edit.click(function () {
+        $('#pop-form').attr('action', '/Admin/Meal/Update')
+        $('.title span').text("Edit")
+        $('#popImg').show()
+         $('.text-danger').val("").text("")
+        let id = this.nextElementSibling.innerHTML
+        $.ajax({
+            url: `https://localhost:7254/admin/meal/update/${id}`,
+            type: 'get',
+            datatype: 'json',
+            cache: false,
+            data: { 'id': id },
+            success: function (res) {
+                console.log(res)
+
+                $('.select').children().each(function () {
+                    //console.log(this.value)
+                    //console.log(res.meal.mealCategoryId)
+                    if (this.value == res.meal.mealCategoryId) {
+                        console.log(this.index)
+                        $('.select').prop('selectedIndex', this.index);
+                        //document.document.getElementById("#select").selectedIndex = this.index;
+                        //$(`.select :nth-child(${this.index})`).prop('selected', true);
+                        //console.log("this")
+                    }
+                });
+
+
+                $('#name').val(res.meal.name).text(res.meal.name)
+                $('#popImg').attr("src", res.meal.signedUrl);
+                $('#popImg').css("height", "100px");
+
+                $('#calories').val(res.meal.calories).text(res.meal.calories)
+                $('#weight').val(res.meal.weight).text(res.meal.weight)
+                //$('.select').val(res.meal.mealCategoryId).text(res.mealCategoryName)
+            },
+            error: function () {
+                alert('error occured');
+            }
+        });
+
+        popupBg.show()
+
+        $('#name').val("")
+        $('#imgurl').val("")
+        $('#calories').val("")
+        $('#weight').val("")
+        popup.show()
+    })
+
+
+</script>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

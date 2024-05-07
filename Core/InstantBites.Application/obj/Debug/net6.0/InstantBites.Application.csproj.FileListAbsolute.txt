@@ -1,0 +1,68 @@
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.deps.json
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.runtimeconfig.json
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfo.cs
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CopyComplete
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\refint\InstantBites.Application.dll
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.genruntimeconfig.cache
+C:\Users\User\source\repos\InstantBites\Core\InstantBites.Application\obj\Debug\net6.0\ref\InstantBites.Application.dll
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfo.cs
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\refint\InstantBites.Application.dll
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.deps.json
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.runtimeconfig.json
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CopyComplete
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.genruntimeconfig.cache
+C:\Users\User\Desktop\New folder (3)\Core\InstantBites.Application\obj\Debug\net6.0\ref\InstantBites.Application.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.deps.json
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.runtimeconfig.json
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.AssemblyReference.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfoInputs.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfo.cs
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CoreCompileInputs.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CopyComplete
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\refint\InstantBites.Application.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.genruntimeconfig.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\ref\InstantBites.Application.dll
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.deps.json
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.runtimeconfig.json
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.AssemblyInfo.cs
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.csproj.CopyComplete
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\refint\InstantBites.Application.dll
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\InstantBites.Application.genruntimeconfig.cache
+C:\Users\User\Desktop\InstantBitess\Core\InstantBites.Application\obj\Debug\net6.0\ref\InstantBites.Application.dll

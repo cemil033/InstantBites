@@ -1,0 +1,76 @@
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.deps.json
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.runtimeconfig.json
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfo.cs
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CopyComplete
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\refint\InstantBites.Persistence.dll
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.genruntimeconfig.cache
+C:\Users\User\source\repos\InstantBites\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\ref\InstantBites.Persistence.dll
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfo.cs
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\refint\InstantBites.Persistence.dll
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.deps.json
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.runtimeconfig.json
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CopyComplete
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.genruntimeconfig.cache
+C:\Users\User\Desktop\New folder (3)\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\ref\InstantBites.Persistence.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.deps.json
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.runtimeconfig.json
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.AssemblyReference.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfoInputs.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfo.cs
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CopyComplete
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\refint\InstantBites.Persistence.dll
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.genruntimeconfig.cache
+C:\Users\alvza\Source\Repos\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\ref\InstantBites.Persistence.dll
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.deps.json
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.runtimeconfig.json
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.dll
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.dll
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Application.pdb
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\bin\Debug\net6.0\InstantBites.Domain.pdb
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.AssemblyInfo.cs
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.csproj.CopyComplete
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.dll
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\refint\InstantBites.Persistence.dll
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.pdb
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\InstantBites.Persistence.genruntimeconfig.cache
+C:\Users\User\Desktop\InstantBitess\Infrastructure\InstantBites.Persistence\obj\Debug\net6.0\ref\InstantBites.Persistence.dll

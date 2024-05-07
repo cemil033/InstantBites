@@ -1,0 +1,211 @@
+﻿@model AddOrderCommandRequest
+
+
+<div id="cards">
+
+    <div class="containerr">
+        <div class="card">
+
+
+            <div class="contentBx">
+                <p class="add">+</p>
+
+            </div>
+
+        </div>
+    </div>
+    @foreach (var order in ViewBag.Orders)
+    {
+        <div class="containerr">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="@order.SignedUrl">
+                </div>
+
+                <div class="contentBx">
+
+                    <h2>@order.Name</h2>
+                    <a class="editBtn">Edit</a>
+                    <p style="display:none">@order.Id</p>
+                    <a asp-route-controller="Order" asp-route-action="Delete" asp-route-id="@order.Id">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+<div class='form popup' style="display:none">
+    <form id="pop-form" asp-area="Admin" method="post" asp-controller="Order" asp-action="Add" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class='title'>
+            <span>Edit</span>
+            <iconify-icon id='x-icon' icon='mdi:alpha-x-box'></iconify-icon>
+        </div>
+        <div class='subtitle'>Order</div>
+        <div class="inputRow">
+            <div class='input-container ic1'>
+                <input asp-for="Name" id='name' class='input' type='text' placeholder=' ' />
+                <div class='cut'></div>
+                <label for='name' class='placeholder'>Name</label>
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <div class='input-container ic2'>
+                <input asp-for="Price" id='price' class='input' type='text' placeholder=' ' />
+                <div class='cut'></div>
+                <label for='price' class='placeholder'>Price</label>
+            </div>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="inputRow">
+            <img id="popImg" />
+            <div class='input-container ic2'>
+                <input accept="image/png, image/gif, image/jpeg, image/avif" asp-for="Image" id='imgurl' class='input' type="file" placeholder=' '>
+                <div class='cut'></div>
+                <label for='imgurl' class='placeholder'>Image URL</label>
+            </div>
+        </div>
+        <div class="inputRow">
+            <select class="select select-cId" tabindex="1" asp-items="ViewBag.OrderCategories" asp-for="CategoryID">
+            </select>
+            <select class="select select-rId" tabindex="1" asp-items="ViewBag.Restaurant" asp-for="RestaurantID">
+            </select>
+        </div>
+        <select multiple style="width:350px; margin:10px" class="form-control" asp-for=MealIds asp-items=@ViewBag.Meals></select>
+        <textarea asp-for="Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+        <button class='submit'>submit</button>
+    </form>
+</div>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+<link href="https://harvesthq.github.io/chosen/chosen.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+<script src="~/lib/chosen/chosen.jquery.min.js"></script>
+<script src="~/lib/chosen/chosen.jquery.js"></script>
+<script src="~/lib/chosen/chosen.proto.min.js"></script>
+<script src="~/lib/chosen/chosen.proto.js"></script>
+<link href="~/lib/chosen/chosen.min.css" rel="stylesheet" />
+<link href="~/lib/chosen/chosen.css" rel="stylesheet" />
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+        defer></script>
+
+<script>
+    $('body').prepend("<div id='popup-bg'></div>")
+    const popupBg = $("#popup-bg")
+    const x = $('#x-icon')
+    popup = $('.popup')
+
+    popup.hide();
+    popup.css({
+        zIndex: 100000,
+    })
+    popupBg.css({
+        backgroundColor: 'rgb(211, 211, 211,0)',
+        width: '100%',
+        height: '100%',
+        zIndex: 10000
+    })
+    popupBg.hide()
+    popupBg.prepend(popup)
+
+    x.click(function () {
+        popupBg.hide()
+    })
+
+    const add = $('.add')
+    add.click(function () {
+
+        $('#pop-form').attr('action', '/Admin/Order/Add')
+        popupBg.show()
+
+        $('.text-danger').text("").val("")
+
+        $('.title span').text("Add")
+        $('.select-cId').prop('selectedIndex', 0);
+        $('.select-rId').prop('selectedIndex', 0);
+        $('.form-control').children().each(function () {
+            $(`.form-control option[value=${this.value}]`).prop("selected", false)
+        })
+        $('#popImg').attr("src", "");
+        $('#name').val("")
+        $('#price').val("")
+        popup.show()
+    })
+
+    const edit = $('.editBtn')
+
+    edit.click(function () {
+        $('#pop-form').attr('action', '/Admin/Order/Update')
+        $('.title span').text("Edit")
+        let id = this.nextElementSibling.innerHTML
+        $('.text-danger').text("").val("")
+        $.ajax({
+            url: `https://localhost:7254/admin/order/update/${id}`,
+            type: 'get',
+            datatype: 'json',
+            cache: false,
+            data: { 'id': id },
+            success: function (res) {
+                console.log(res)
+                $('.select-cId').children().each(function () {
+                    if (this.value == res.order.categoryId) {
+                        //console.log(this.index)
+                        $('.select-cId').prop('selectedIndex', this.index);
+                    }
+                });
+
+                $('.select-rId').children().each(function () {
+                    if (this.value == res.order.restaurantId) {
+                        //console.log(this.index)
+                        $('.select-rId').prop('selectedIndex', this.index);
+                    }
+                });
+
+                //console.log($('.form-control').children())
+                for (let i = 0; i < res.mealsId.length; i++) {
+                    //if (this.value == res.mealsId[i]) {
+                    //$('.form-control').prop('selectedIndex', this.)
+                    console.log(res.mealsId[i])
+                    //}
+                }
+                $('.form-control').children().each(function () {
+                    for (let i = 0; i < res.mealsId.length; i++) {
+                        if (this.value == res.mealsId[i]) {
+                            //$('.form-control').prop('selectedIndex', this.index)
+                            //console.log(this)
+                            $(`.form-control option[value=${this.value}]`).attr('selected', 'selected');
+                            //this.attr('selected', 'selected');
+                        }
+                    }
+                })
+
+                $('textarea').text(res.order.description)
+                $('#name').val(res.order.name).text(res.order.name)
+                $('#popImg').attr("src", res.order.signedUrl);
+                $('#popImg').css("height", "100px");
+
+                $('#price').val(res.order.price).text(res.order.price)
+                //$('.select').val(res.meal.mealCategoryId).text(res.mealCategoryName)
+            },
+            error: function () {
+                alert('error occured');
+            }
+        });
+
+        popupBg.show()
+
+        $('#name').val("")
+        $('#imgurl').val("")
+        $('#calories').val("")
+        $('#weight').val("")
+        popup.show()
+    })
+
+    $('.submit').css({
+        'marginTop': '5px'
+    })
+</script>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

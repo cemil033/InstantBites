@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstantBites</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InstantBites.MVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div id="logo">
+        <span class="big-logo">Dashboard</span>
+    </div>
+    <div id="left-menu">
+        <ul>
+            <li class="active">
+                <a asp-action="GetAll" asp-controller="MealCategory">
+                    <iconify-icon icon="material-symbols:production-quantity-limits"></iconify-icon>
+                    <span>Meal Categories</span>
+                </a>
+            </li>
+            <li class="active">
+                <a asp-action="GetAll" asp-controller="OrderCategory">
+                    <iconify-icon icon="material-symbols:category"></iconify-icon>
+                    <span>Order Categories</span>
+                </a>
+            </li>
+            <li class="active">
+                <a asp-action="GetAll" asp-controller="Meal">
+                    <iconify-icon icon="material-symbols:category"></iconify-icon>
+                    <span>Meals</span>
+                </a>
+            </li>
+            <li class="active">
+                <a asp-action="GetAll" asp-controller="Restaurant">
+                    <iconify-icon icon="material-symbols:category"></iconify-icon>
+                    <span>Restaurants</span>
+                </a>
+            </li>
+            <li class="active">
+                <a asp-action="GetAll" asp-controller="Order">
+                    <iconify-icon icon="material-symbols:category"></iconify-icon>
+                    <span>Orders</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="main-content">
+        @RenderBody()
+    </div>
+
+    <span id="show-lable">Hello</span>
+    
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

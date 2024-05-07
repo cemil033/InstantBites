@@ -1,0 +1,118 @@
+﻿@model LoginClientCommandRequest
+
+<form asp-action="Login" method="post" asp-controller="Account" enctype="multipart/form-data">
+    <div class="login">
+        <div class="box signup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input id="return" type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+            <h1>Log in</h1>
+
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input asp-for="Email" class="ic2" id="email" type="text" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input asp-for="Password" ap class="ic2" id="password" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <a id="forgot">Forgot Password?</a>
+            <button type="submit" class="viewBtn">Sign In</button>
+
+            <div class="or">
+                <hr />
+                <span>or</span>
+                <hr />
+            </div>
+            <div id="signUp">
+                <span>Don't have an account?</span>
+                <a asp-controller="Account" asp-action="SignUp" id="signSwitch">Sign up</a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+<div class="popup" style="display:none">
+    <div id="popHead">
+        <h1>Enter your Email</h1>
+        <iconify-icon id="x" icon="mdi:alpha-x-circle-outline"></iconify-icon>
+    </div>
+    <input id="emaill" placeholder="example@gmail.com" type="email" />
+    <button id="submit" class="viewBtn">Submit</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    //let param
+    //if (window.location.href.includes("?")) {
+    //    param = window.location.href.substring(window.location.href.indexOf('?') + 1)
+    //    console.log(param)
+    //}
+
+    //let url = "@ViewBag.ReturnUrl"
+    //if (url !== null) {
+    //    console.log("@ViewBag.ReturnUrl")
+    //    //window.location.href += `?ReturnUrl=${url.substring(0)}`
+    //    $('#return').value("@ViewBag.ReturnUrl")
+    //}
+
+    $('body').prepend("<div id='popContainer'></div>")
+    const popupBg = $('#popContainer')
+    const popup = $('.popup')
+    const x = $('#x')
+
+    popup.hide();
+    popupBg.hide();
+
+    popup.css({
+        zIndex: 100000,
+    })
+    popupBg.css({
+        //backgroundColor: 'rgb(211, 211, 211,0)',
+        width: '100%',
+        height: '100%',
+        zIndex: 10000
+    })
+
+    popupBg.prepend(popup)
+
+    const forgotBtn = $("#forgot")
+    forgotBtn.click(function () {
+        popupBg.show()
+        popup.show()
+    })
+
+    x.click(function () {
+        popupBg.hide()
+        popup.show()
+    })
+
+    $('#submit').click(function () {
+        let email = $('#emaill').val()
+        $.ajax({
+            url: `https://localhost:7254/account/forgotpassword`,
+            type: 'get',
+            datatype: 'json',
+            cache: false,
+            data: { 'email': email },
+            success: function () {
+                popupBg.hide()
+                window.location.href = `../Home/Result?Success=true&Message=Check your email`;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+                window.location.href = `../Home/Result?Success=false&Message=There was error in replacing your password`;
+            }
+        });
+    })
+</script>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

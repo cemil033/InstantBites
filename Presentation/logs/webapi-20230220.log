@@ -1,0 +1,511 @@
+[2023-02-20 15:03:12.524 +04:00  INF]  User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-02-20 15:03:15.386 +04:00  INF]  Executed DbCommand (101ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+[2023-02-20 15:03:15.507 +04:00  INF]  Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Active], [a].[Balance], [a].[ClientLocationId], [a].[ConcurrencyStamp], [a].[CreatedTime], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SavedFileName], [a].[SavedUrl], [a].[SecurityStamp], [a].[SignedUrl], [a].[Surname], [a].[TwoFactorEnabled], [a].[UpdatedTime], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[2023-02-20 15:03:15.771 +04:00  INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[CreatedTime], [c].[LastSubscribedTime], [c].[OrderId], [c].[Shipping], [c].[UpdatedTime]
+FROM [ClientOrders] AS [c]
+[2023-02-20 15:03:15.813 +04:00  INF]  Now listening on: https://localhost:7254
+[2023-02-20 15:03:15.815 +04:00  INF]  Now listening on: http://localhost:5254
+[2023-02-20 15:03:15.824 +04:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-02-20 15:03:15.827 +04:00  INF]  Hosting environment: Development
+[2023-02-20 15:03:15.830 +04:00  INF]  Content root path: C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\
+[2023-02-20 15:03:16.454 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/ - -
+[2023-02-20 15:03:16.624 +04:00  INF]  Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Active], [a].[Balance], [a].[ClientLocationId], [a].[ConcurrencyStamp], [a].[CreatedTime], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SavedFileName], [a].[SavedUrl], [a].[SecurityStamp], [a].[SignedUrl], [a].[Surname], [a].[TwoFactorEnabled], [a].[UpdatedTime], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-02-20 15:03:16.688 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+[2023-02-20 15:03:16.738 +04:00  INF]  Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2023-02-20 15:03:16.750 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+[2023-02-20 15:03:16.762 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+[2023-02-20 15:03:16.768 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+[2023-02-20 15:03:16.773 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+[2023-02-20 15:03:16.788 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Controllers.HomeController.Index (InstantBites.MVC)'
+[2023-02-20 15:03:16.807 +04:00  INF]  Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller InstantBites.MVC.Controllers.HomeController (InstantBites.MVC).
+[2023-02-20 15:03:16.823 +04:00  INF]  Executing ViewResult, running view Index.
+[2023-02-20 15:03:17.084 +04:00  INF]  Executed ViewResult - view Index executed in 258.9244ms.
+[2023-02-20 15:03:17.093 +04:00  INF]  Executed action InstantBites.MVC.Controllers.HomeController.Index (InstantBites.MVC) in 284.3929ms
+[2023-02-20 15:03:17.094 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Controllers.HomeController.Index (InstantBites.MVC)'
+[2023-02-20 15:03:17.187 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:03:17.187 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:03:17.187 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/css/main-layout.css?v=SlHrTuyIwEfzBh88yoODQG8oKu33hyHzHOfTtnE4Q5M - -
+[2023-02-20 15:03:17.187 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/css/reset.css - -
+[2023-02-20 15:03:17.188 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/css/reset.css?v=gbhOaBbEr8bS1zqF6ZUMIZfkrXcoYd9UsYGknG3IRsc - -
+[2023-02-20 15:03:17.196 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/images/logo.png - -
+[2023-02-20 15:03:17.196 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:03:17.226 +04:00  INF]  The file /images/logo.png was not modified
+[2023-02-20 15:03:17.226 +04:00  INF]  The file /css/reset.css was not modified
+[2023-02-20 15:03:17.226 +04:00  INF]  The file /css/reset.css was not modified
+[2023-02-20 15:03:17.226 +04:00  INF]  The file /css/main-layout.css was not modified
+[2023-02-20 15:03:17.227 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 30.3017ms
+[2023-02-20 15:03:17.227 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/css/reset.css?v=gbhOaBbEr8bS1zqF6ZUMIZfkrXcoYd9UsYGknG3IRsc - - - 304 - text/css 39.4259ms
+[2023-02-20 15:03:17.227 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/css/main-layout.css?v=SlHrTuyIwEfzBh88yoODQG8oKu33hyHzHOfTtnE4Q5M - - - 304 - text/css 39.8953ms
+[2023-02-20 15:03:17.227 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/css/reset.css - - - 304 - text/css 39.9384ms
+[2023-02-20 15:03:17.227 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/images/logo.png - - - 304 - image/png 31.2860ms
+[2023-02-20 15:03:17.227 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/ - - - 200 - text/html;+charset=utf-8 777.1663ms
+[2023-02-20 15:03:17.245 +04:00  INF]  Sending file. Request path: '/InstantBites.MVC.styles.css'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\obj\Debug\net6.0\scopedcss\bundle\InstantBites.MVC.styles.css'
+[2023-02-20 15:03:17.245 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 200 1133 text/css 58.2413ms
+[2023-02-20 15:03:17.263 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/images/dishes-bg.jpeg - -
+[2023-02-20 15:03:17.264 +04:00  INF]  The file /images/dishes-bg.jpeg was not modified
+[2023-02-20 15:03:17.264 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/images/dishes-bg.jpeg - - - 304 - image/jpeg 0.6200ms
+[2023-02-20 15:03:17.270 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 73.7532ms
+[2023-02-20 15:03:21.032 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin - -
+[2023-02-20 15:03:21.047 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:03:21.071 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "MealCategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.MealCategories.GetAllMealCategories.GetAllMealCategoriesQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController (InstantBites.MVC).
+[2023-02-20 15:03:21.155 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedTime], [m].[Name], [m].[UpdatedTime]
+FROM [MealCategories] AS [m]
+[2023-02-20 15:03:21.210 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:03:21.312 +04:00  INF]  Executed ViewResult - view GetAll executed in 102.6375ms.
+[2023-02-20 15:03:21.312 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC) in 241.4277ms
+[2023-02-20 15:03:21.312 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:03:21.317 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin - - - 200 - text/html;+charset=utf-8 285.0524ms
+[2023-02-20 15:03:21.334 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/css/bootstrap.min.css - -
+[2023-02-20 15:03:21.337 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:03:21.337 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/css/style.css?v=v68C9TxvUpYQX-yRzczOhaL1AMuMdFxp19QnEAAWHYU - -
+[2023-02-20 15:03:21.338 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:03:21.338 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.esm.min.js - -
+[2023-02-20 15:03:21.338 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.bundle.js - -
+[2023-02-20 15:03:21.338 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.esm.js - -
+[2023-02-20 15:03:21.338 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.3928ms
+[2023-02-20 15:03:21.340 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.min.js - -
+[2023-02-20 15:03:21.340 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.js - -
+[2023-02-20 15:03:21.341 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:03:21.350 +04:00  INF]  Sending file. Request path: '/InstantBites.MVC.styles.css'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\obj\Debug\net6.0\scopedcss\bundle\InstantBites.MVC.styles.css'
+[2023-02-20 15:03:21.350 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 200 1133 text/css 13.2142ms
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.esm.min.js'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js'
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.js'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.js'
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.min.js'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js'
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.esm.js'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js'
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\css\style.css'
+[2023-02-20 15:03:21.405 +04:00  INF]  Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.js - - - 200 153194 application/javascript 66.2112ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.min.js - - - 200 59517 application/javascript 66.2403ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.esm.js - - - 200 143996 application/javascript 67.5650ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.bundle.js - - - 200 215272 application/javascript 67.7190ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/css/bootstrap.min.css - - - 200 162726 text/css 71.6645ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/lib/bootstrap/dist/js/bootstrap.esm.min.js - - - 200 72022 application/javascript 67.6342ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/css/style.css?v=v68C9TxvUpYQX-yRzczOhaL1AMuMdFxp19QnEAAWHYU - - - 200 21585 text/css 68.8272ms
+[2023-02-20 15:03:21.406 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 64.9294ms
+[2023-02-20 15:03:21.546 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin - -
+[2023-02-20 15:03:21.561 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:03:21.562 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "MealCategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.MealCategories.GetAllMealCategories.GetAllMealCategoriesQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController (InstantBites.MVC).
+[2023-02-20 15:03:21.567 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedTime], [m].[Name], [m].[UpdatedTime]
+FROM [MealCategories] AS [m]
+[2023-02-20 15:03:21.567 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:03:21.577 +04:00  INF]  Executed ViewResult - view GetAll executed in 10.2354ms.
+[2023-02-20 15:03:21.578 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC) in 15.8211ms
+[2023-02-20 15:03:21.578 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:03:21.580 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin - - - 200 - text/html;+charset=utf-8 34.3614ms
+[2023-02-20 15:03:21.592 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:03:21.592 +04:00  INF]  The file /InstantBites.MVC.styles.css was not modified
+[2023-02-20 15:03:21.592 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 304 - text/css 0.8934ms
+[2023-02-20 15:03:21.596 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:03:21.596 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.3390ms
+[2023-02-20 15:03:21.599 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:03:21.605 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.6642ms
+[2023-02-20 15:03:22.840 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/Admin/Restaurant - -
+[2023-02-20 15:03:22.844 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:03:22.849 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.Restaurants.GetAllRestaurants.GetAllRestaurantsQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:03:22.863 +04:00  INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+[2023-02-20 15:03:22.873 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+[2023-02-20 15:03:22.877 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:03:22.950 +04:00  INF]  Executed ViewResult - view GetAll executed in 73.0915ms.
+[2023-02-20 15:03:22.950 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC) in 101.2408ms
+[2023-02-20 15:03:22.950 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:03:22.955 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/Admin/Restaurant - - - 200 - text/html;+charset=utf-8 115.6008ms
+[2023-02-20 15:03:22.979 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:03:22.979 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:03:22.979 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.6339ms
+[2023-02-20 15:03:22.985 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.8553ms
+[2023-02-20 15:03:25.477 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891003014 - -
+[2023-02-20 15:03:25.483 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:03:25.489 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:03:29.723 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:03:29.732 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:03:29.758 +04:00  INF]  Executing OkObjectResult, writing value of type 'InstantBites.Domain.Entites.Restaurant'.
+[2023-02-20 15:03:29.812 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 4322.7803ms
+[2023-02-20 15:03:29.812 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:03:29.812 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891003014 - - - 200 - application/json;+charset=utf-8 4335.0050ms
+[2023-02-20 15:03:35.063 +04:00  INF]  Request starting HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundaryHOWnJ072LYkK0wTn 1036
+[2023-02-20 15:03:35.066 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:03:35.071 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(InstantBites.Application.Features.Commands.Restaurants.AddRestaurant.AddRestaurantCommandRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:03:35.119 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Email] = @__ToString_0
+[2023-02-20 15:03:44.809 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:03:47.134 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:04:44.309 +04:00  INF]  User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-02-20 15:04:46.575 +04:00  INF]  Executed DbCommand (84ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+[2023-02-20 15:04:46.699 +04:00  INF]  Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Active], [a].[Balance], [a].[ClientLocationId], [a].[ConcurrencyStamp], [a].[CreatedTime], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SavedFileName], [a].[SavedUrl], [a].[SecurityStamp], [a].[SignedUrl], [a].[Surname], [a].[TwoFactorEnabled], [a].[UpdatedTime], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[2023-02-20 15:04:46.915 +04:00  INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ClientId], [c].[CreatedTime], [c].[LastSubscribedTime], [c].[OrderId], [c].[Shipping], [c].[UpdatedTime]
+FROM [ClientOrders] AS [c]
+[2023-02-20 15:04:46.926 +04:00  INF]  Now listening on: https://localhost:7254
+[2023-02-20 15:04:46.928 +04:00  INF]  Now listening on: http://localhost:5254
+[2023-02-20 15:04:46.938 +04:00  INF]  Application started. Press Ctrl+C to shut down.
+[2023-02-20 15:04:46.942 +04:00  INF]  Hosting environment: Development
+[2023-02-20 15:04:46.945 +04:00  INF]  Content root path: C:\Users\User\Desktop\InstantBitess\Presentation\InstantBites.MVC\
+[2023-02-20 15:04:47.323 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/ - -
+[2023-02-20 15:04:47.413 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Controllers.HomeController.Index (InstantBites.MVC)'
+[2023-02-20 15:04:47.431 +04:00  INF]  Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller InstantBites.MVC.Controllers.HomeController (InstantBites.MVC).
+[2023-02-20 15:04:47.451 +04:00  INF]  Executing ViewResult, running view Index.
+[2023-02-20 15:04:47.561 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Active], [a].[Balance], [a].[ClientLocationId], [a].[ConcurrencyStamp], [a].[CreatedTime], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SavedFileName], [a].[SavedUrl], [a].[SecurityStamp], [a].[SignedUrl], [a].[Surname], [a].[TwoFactorEnabled], [a].[UpdatedTime], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-02-20 15:04:47.674 +04:00  INF]  Executed ViewResult - view Index executed in 227.1049ms.
+[2023-02-20 15:04:47.680 +04:00  INF]  Executed action InstantBites.MVC.Controllers.HomeController.Index (InstantBites.MVC) in 248.4534ms
+[2023-02-20 15:04:47.681 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Controllers.HomeController.Index (InstantBites.MVC)'
+[2023-02-20 15:04:47.725 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:04:47.725 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:04:47.725 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:04:47.738 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 11.2718ms
+[2023-02-20 15:04:47.739 +04:00  INF]  The file /InstantBites.MVC.styles.css was not modified
+[2023-02-20 15:04:47.744 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/ - - - 200 - text/html;+charset=utf-8 424.1210ms
+[2023-02-20 15:04:47.744 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 304 - text/css 16.2537ms
+[2023-02-20 15:04:47.756 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.9519ms
+[2023-02-20 15:04:51.306 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin - -
+[2023-02-20 15:04:51.315 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:04:51.327 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "MealCategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.MealCategories.GetAllMealCategories.GetAllMealCategoriesQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController (InstantBites.MVC).
+[2023-02-20 15:04:51.374 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedTime], [m].[Name], [m].[UpdatedTime]
+FROM [MealCategories] AS [m]
+[2023-02-20 15:04:51.410 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:04:51.479 +04:00  INF]  Executed ViewResult - view GetAll executed in 69.4148ms.
+[2023-02-20 15:04:51.479 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC) in 151.9985ms
+[2023-02-20 15:04:51.479 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.MealCategoryController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:04:51.482 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin - - - 200 - text/html;+charset=utf-8 176.0605ms
+[2023-02-20 15:04:51.493 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:04:51.493 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:04:51.493 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.5135ms
+[2023-02-20 15:04:51.498 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 4.9749ms
+[2023-02-20 15:04:52.706 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/Admin/Restaurant - -
+[2023-02-20 15:04:52.719 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:04:52.722 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.Restaurants.GetAllRestaurants.GetAllRestaurantsQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:04:52.733 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+[2023-02-20 15:04:52.738 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+[2023-02-20 15:04:52.741 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:04:52.772 +04:00  INF]  Executed ViewResult - view GetAll executed in 31.6066ms.
+[2023-02-20 15:04:52.772 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC) in 50.2475ms
+[2023-02-20 15:04:52.772 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:04:52.774 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/Admin/Restaurant - - - 200 - text/html;+charset=utf-8 67.8309ms
+[2023-02-20 15:04:52.786 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:04:52.786 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:04:52.786 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.6017ms
+[2023-02-20 15:04:52.798 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.4152ms
+[2023-02-20 15:04:54.256 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891092813 - -
+[2023-02-20 15:04:54.258 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:04:54.261 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:04:56.064 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:04:56.071 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:04:56.097 +04:00  INF]  Executing OkObjectResult, writing value of type 'InstantBites.Domain.Entites.Restaurant'.
+[2023-02-20 15:04:56.145 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 1883.8283ms
+[2023-02-20 15:04:56.145 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:04:56.145 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891092813 - - - 200 - application/json;+charset=utf-8 1889.7618ms
+[2023-02-20 15:05:01.771 +04:00  INF]  Request starting HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundaryIDKR4Gxe8bxZcJYj 1039
+[2023-02-20 15:05:01.774 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:01.780 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(InstantBites.Application.Features.Commands.Restaurants.AddRestaurant.AddRestaurantCommandRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:01.810 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Email] = @__ToString_0
+[2023-02-20 15:05:05.411 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:05.418 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:05.627 +04:00  INF]  20.02.2023 11:05:05 :: The instance of entity type 'Restaurant' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+[2023-02-20 15:05:05.627 +04:00  INF]  Executing RedirectResult, redirecting to /Admin/Restaurant.
+[2023-02-20 15:05:05.628 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 3847.53ms
+[2023-02-20 15:05:05.628 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:05.628 +04:00  INF]  Request finished HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundaryIDKR4Gxe8bxZcJYj 1039 - 302 0 - 3856.7678ms
+[2023-02-20 15:05:05.630 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/Admin/Restaurant - -
+[2023-02-20 15:05:05.631 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:05.631 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.Restaurants.GetAllRestaurants.GetAllRestaurantsQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:05.634 +04:00  INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+[2023-02-20 15:05:05.636 +04:00  INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+[2023-02-20 15:05:05.636 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:05:05.640 +04:00  INF]  Executed ViewResult - view GetAll executed in 3.5637ms.
+[2023-02-20 15:05:05.640 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC) in 8.6123ms
+[2023-02-20 15:05:05.640 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:05.642 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/Admin/Restaurant - - - 200 - text/html;+charset=utf-8 11.7850ms
+[2023-02-20 15:05:05.651 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:05:05.651 +04:00  INF]  The file /InstantBites.MVC.styles.css was not modified
+[2023-02-20 15:05:05.651 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 304 - text/css 0.7864ms
+[2023-02-20 15:05:05.654 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:05:05.654 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.3670ms
+[2023-02-20 15:05:05.655 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:05:05.664 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.4531ms
+[2023-02-20 15:05:09.576 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891105676 - -
+[2023-02-20 15:05:09.577 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:09.577 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:11.088 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:11.092 +04:00  INF]  Executed DbCommand (0ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:11.092 +04:00  INF]  Executing OkObjectResult, writing value of type 'InstantBites.Domain.Entites.Restaurant'.
+[2023-02-20 15:05:11.092 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 1515.7083ms
+[2023-02-20 15:05:11.092 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:11.093 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891105676 - - - 200 - application/json;+charset=utf-8 1516.8162ms
+[2023-02-20 15:05:14.574 +04:00  INF]  Request starting HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundaryZhWmz2Vr4WuhLscg 1040
+[2023-02-20 15:05:14.575 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:14.575 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(InstantBites.Application.Features.Commands.Restaurants.AddRestaurant.AddRestaurantCommandRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:14.580 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:17.321 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:17.325 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:17.449 +04:00  INF]  Executed DbCommand (7ms) [Parameters=[@p9='?' (Size = 450), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Restaurants] SET [CreatedTime] = @p0, [Description] = @p1, [Email] = @p2, [Name] = @p3, [RestaurantLocationId] = @p4, [SavedFileName] = @p5, [SavedUrl] = @p6, [SignedUrl] = @p7, [UpdatedTime] = @p8
+OUTPUT 1
+WHERE [Id] = @p9;
+[2023-02-20 15:05:17.469 +04:00  INF]  Executing RedirectResult, redirecting to /Admin/Restaurant.
+[2023-02-20 15:05:17.469 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 2893.7487ms
+[2023-02-20 15:05:17.469 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:17.469 +04:00  INF]  Request finished HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundaryZhWmz2Vr4WuhLscg 1040 - 302 0 - 2895.6832ms
+[2023-02-20 15:05:17.471 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/Admin/Restaurant - -
+[2023-02-20 15:05:17.473 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:17.473 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.Restaurants.GetAllRestaurants.GetAllRestaurantsQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:17.484 +04:00  INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+[2023-02-20 15:05:17.487 +04:00  INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+[2023-02-20 15:05:17.487 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:05:17.491 +04:00  INF]  Executed ViewResult - view GetAll executed in 3.7496ms.
+[2023-02-20 15:05:17.491 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC) in 18.1091ms
+[2023-02-20 15:05:17.491 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:17.493 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/Admin/Restaurant - - - 200 - text/html;+charset=utf-8 21.0606ms
+[2023-02-20 15:05:17.501 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:05:17.507 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:05:17.508 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.6288ms
+[2023-02-20 15:05:17.510 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.2667ms
+[2023-02-20 15:05:20.424 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891117526 - -
+[2023-02-20 15:05:20.425 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:20.425 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:21.889 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:21.892 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:21.892 +04:00  INF]  Executing OkObjectResult, writing value of type 'InstantBites.Domain.Entites.Restaurant'.
+[2023-02-20 15:05:21.892 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 1467.5367ms
+[2023-02-20 15:05:21.892 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:21.892 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891117526 - - - 200 - application/json;+charset=utf-8 1468.7247ms
+[2023-02-20 15:05:28.148 +04:00  INF]  Request starting HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundary1L41zMBOkIBpqRtt 1037
+[2023-02-20 15:05:28.149 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:28.149 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(InstantBites.Application.Features.Commands.Restaurants.AddRestaurant.AddRestaurantCommandRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:28.153 +04:00  INF]  Executed DbCommand (0ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Email] = @__ToString_0
+[2023-02-20 15:05:32.338 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:32.341 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:32.467 +04:00  INF]  20.02.2023 11:05:32 :: The instance of entity type 'Restaurant' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+[2023-02-20 15:05:32.467 +04:00  INF]  Executing RedirectResult, redirecting to /Admin/Restaurant.
+[2023-02-20 15:05:32.467 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 4317.849ms
+[2023-02-20 15:05:32.467 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:32.467 +04:00  INF]  Request finished HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundary1L41zMBOkIBpqRtt 1037 - 302 0 - 4319.4080ms
+[2023-02-20 15:05:32.469 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/Admin/Restaurant - -
+[2023-02-20 15:05:32.470 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:32.470 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.Restaurants.GetAllRestaurants.GetAllRestaurantsQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:32.474 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+[2023-02-20 15:05:32.477 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+[2023-02-20 15:05:32.477 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:05:32.481 +04:00  INF]  Executed ViewResult - view GetAll executed in 4.3415ms.
+[2023-02-20 15:05:32.481 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC) in 10.8923ms
+[2023-02-20 15:05:32.481 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:32.483 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/Admin/Restaurant - - - 200 - text/html;+charset=utf-8 14.1474ms
+[2023-02-20 15:05:32.492 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:05:32.492 +04:00  INF]  The file /InstantBites.MVC.styles.css was not modified
+[2023-02-20 15:05:32.492 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 304 - text/css 0.4890ms
+[2023-02-20 15:05:32.495 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:05:32.496 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.4787ms
+[2023-02-20 15:05:32.501 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:05:32.506 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.4813ms
+[2023-02-20 15:05:35.144 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891132527 - -
+[2023-02-20 15:05:35.145 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:35.145 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:36.809 +04:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:36.812 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:36.812 +04:00  INF]  Executing OkObjectResult, writing value of type 'InstantBites.Domain.Entites.Restaurant'.
+[2023-02-20 15:05:36.813 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 1667.9254ms
+[2023-02-20 15:05:36.813 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:36.813 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891132527 - - - 200 - application/json;+charset=utf-8 1669.1043ms
+[2023-02-20 15:05:43.668 +04:00  INF]  Request starting HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundarygB5m3WgHrKgHlprQ 1037
+[2023-02-20 15:05:43.669 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:43.669 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(InstantBites.Application.Features.Commands.Restaurants.AddRestaurant.AddRestaurantCommandRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:43.674 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:49.940 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:51.884 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:05:55.289 +04:00  INF]  Executed DbCommand (13ms) [Parameters=[@p9='?' (Size = 450), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Restaurants] SET [CreatedTime] = @p0, [Description] = @p1, [Email] = @p2, [Name] = @p3, [RestaurantLocationId] = @p4, [SavedFileName] = @p5, [SavedUrl] = @p6, [SignedUrl] = @p7, [UpdatedTime] = @p8
+OUTPUT 1
+WHERE [Id] = @p9;
+[2023-02-20 15:05:59.206 +04:00  INF]  Executing RedirectResult, redirecting to /Admin/Restaurant.
+[2023-02-20 15:05:59.206 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 15536.961ms
+[2023-02-20 15:05:59.206 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:05:59.207 +04:00  INF]  Request finished HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundarygB5m3WgHrKgHlprQ 1037 - 302 0 - 15538.5267ms
+[2023-02-20 15:05:59.225 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/Admin/Restaurant - -
+[2023-02-20 15:05:59.231 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:59.244 +04:00  INF]  Route matched with {area = "Admin", action = "GetAll", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(InstantBites.Application.Features.Queries.Restaurants.GetAllRestaurants.GetAllRestaurantsQueryRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:05:59.284 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+[2023-02-20 15:05:59.288 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+[2023-02-20 15:05:59.289 +04:00  INF]  Executing ViewResult, running view GetAll.
+[2023-02-20 15:05:59.293 +04:00  INF]  Executed ViewResult - view GetAll executed in 4.6177ms.
+[2023-02-20 15:05:59.293 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC) in 48.6294ms
+[2023-02-20 15:05:59.293 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.GetAll (InstantBites.MVC)'
+[2023-02-20 15:05:59.299 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/Admin/Restaurant - - - 200 - text/html;+charset=utf-8 73.4267ms
+[2023-02-20 15:05:59.310 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - -
+[2023-02-20 15:05:59.311 +04:00  INF]  The file /InstantBites.MVC.styles.css was not modified
+[2023-02-20 15:05:59.311 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/InstantBites.MVC.styles.css?v=Z2_n4tV0aFGWkMeu3EHuaT6XXfzOBX2YkhPqZ5Y5osk - - - 304 - text/css 0.6083ms
+[2023-02-20 15:05:59.314 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - -
+[2023-02-20 15:05:59.314 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.5696ms
+[2023-02-20 15:05:59.315 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/_vs/browserLink - -
+[2023-02-20 15:05:59.320 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.2778ms
+[2023-02-20 15:06:01.880 +04:00  INF]  Request starting HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891159343 - -
+[2023-02-20 15:06:01.881 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:06:01.881 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:06:03.296 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:06:07.936 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:06:07.937 +04:00  INF]  Executing OkObjectResult, writing value of type 'InstantBites.Domain.Entites.Restaurant'.
+[2023-02-20 15:06:07.937 +04:00  INF]  Executed action InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC) in 6055.7807ms
+[2023-02-20 15:06:07.937 +04:00  INF]  Executed endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:06:07.937 +04:00  INF]  Request finished HTTP/2 GET https://localhost:7254/admin/Restaurant/update/82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b?id=82d183f0-4a1f-4db9-ac99-86cc4c2dfc7b&_=1676891159343 - - - 200 - application/json;+charset=utf-8 6057.1786ms
+[2023-02-20 15:06:11.820 +04:00  INF]  Request starting HTTP/2 POST https://localhost:7254/Admin/Restaurant/Update multipart/form-data;+boundary=----WebKitFormBoundaryQVOf1Y9lJimkBdFz 1043
+[2023-02-20 15:06:11.821 +04:00  INF]  Executing endpoint 'InstantBites.MVC.Areas.Admin.Controllers.RestaurantController.Update (InstantBites.MVC)'
+[2023-02-20 15:06:11.821 +04:00  INF]  Route matched with {area = "Admin", action = "Update", controller = "Restaurant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(InstantBites.Application.Features.Commands.Restaurants.AddRestaurant.AddRestaurantCommandRequest) on controller InstantBites.MVC.Areas.Admin.Controllers.RestaurantController (InstantBites.MVC).
+[2023-02-20 15:06:11.826 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__ToString_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Email] = @__ToString_0
+[2023-02-20 15:06:15.821 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Description], [r].[Email], [r].[Name], [r].[RestaurantLocationId], [r].[SavedFileName], [r].[SavedUrl], [r].[SignedUrl], [r].[UpdatedTime]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__id_0
+[2023-02-20 15:06:17.581 +04:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreatedTime], [r].[Latitude], [r].[Longitude], [r].[UpdatedTime]
+FROM [RestaurantLocations] AS [r]
+WHERE [r].[Id] = @__id_0

@@ -1,0 +1,27 @@
+﻿<div class="result">
+    <form asp-action="Index" asp-controller="Home">
+        <div class="resultContent">
+            <img id="checked" src="~/images/checked.png" />
+            <img id="cancel" src="~/images/cancel.png" />
+            <span id="msg"></span>
+            <button type="submit" class="viewBtn" asp-action="Index" asp-controller="Home">Continue</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $('#msg').text("@ViewBag.Message")
+    if (@ViewBag.Success.ToString().ToLower()) {
+        $('#checked').show()
+        $('#cancel').hide()
+    }
+    else {
+        $('#checked').hide()
+        $('#cancel').show()
+        $('button').css({
+            'backgroundColor': 'red'
+        })
+    }
+
+</script>

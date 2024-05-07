@@ -1,0 +1,92 @@
+﻿@model GetAllRestaurantsQueryResponse
+
+<div id="restaurants">
+    @for (int i = 0; i < Model.Restaurants.Count; i++)
+    {
+        <div class="restRow">
+            <h2>@Model.Restaurants[i].Name</h2>
+            <div class="restContainer">
+                <img src="@Model.Restaurants[i].SignedUrl" />
+                <div class="maps">
+                    <div class="map" id="map @i"></div>
+                    <a target="_blank" href="https://maps.google.com/?q=@Model.Restaurants[i].RestaurantLocation.Latitude,@Model.Restaurants[i].RestaurantLocation.Longitude">see on map</a>
+                </div>
+            </div>
+            <p>@Model.Restaurants[i].Description</p>
+            <div class="restEmail">
+                <span>Email: </span>
+                <span><a href="mailto:@Model.Restaurants[i].Email">@Model.Restaurants[i].Email</a></span>
+            </div>
+        </div>
+
+        <hr />
+    }
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuTUu96M3hmSwxkTVQvLH2LPU4l_lJhX4&callback=initMap&v=weekly"
+        defer></script>
+
+<script>
+
+    $('.gm-svpc').hide()
+
+    let map;
+
+    let mark;
+
+    function initMap() {
+        var locations = [];
+
+    @foreach (var item in Model.Restaurants)
+    {
+        @:locations.push({ lat: @item.RestaurantLocation.Latitude, lng: @item.RestaurantLocation.Longitude})
+    }
+            console.log(locations)
+
+        var maps = [];
+
+        for (var i = 0; i < locations.length; i++) {
+
+            var latlng = locations[i];
+
+            var mapOptions = {
+                center: latlng,
+                zoom: 12,
+            };
+
+            var map = new google.maps.Map(document.getElementById(`map ${i}`), mapOptions);
+            maps.push(map);
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: latlng,
+            });
+        }
+
+        //map = new google.maps.Map(document.getElementById("map"), {
+        //    center: { lat: 40.409264, lng: 49.867092 },
+        //    zoom: 12,
+        //});
+
+        //mark = new google.maps.Marker({
+        //    position: { lat: , lng: 131.044 },
+        //    map: map,
+        //});
+
+        //map.addListener("click", (event) => {
+        //    addMarker(event.latLng, map);
+        //    $('#lat').val(event.latLng.toJSON()["lat"]).text(event.latLng.toJSON()["lat"])
+        //    $('#lng').val(event.latLng.toJSON()["lng"]).text(event.latLng.toJSON()["lng"])
+        //    console.log($('#lat').val())
+        //    console.log($('#lng').val())
+        //});
+
+        //function addMarker(location, map) {
+        //    if (mark != null)
+        //        mark.setMap(null)
+        //}
+    }
+    window.initMap = initMap
+
+</script>

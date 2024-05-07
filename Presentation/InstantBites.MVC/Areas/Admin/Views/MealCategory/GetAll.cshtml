@@ -1,0 +1,132 @@
+﻿@model AddMealCategoryCommandRequest
+@{
+    var categories = ViewBag.Categories as List<MealCategory>;
+    
+}
+
+<div class="flex-container">
+
+    <table class="styled-table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        <tr class="active-row" id="addBtn" style="cursor:pointer">
+            <td>+</td>
+            <td>Add New</td>
+            <td></td>
+        </tr>
+        @foreach (var item in ViewBag.Categories)
+        {
+            <tr class="active-row">
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td class="actions">
+                    <button class="editBtn">edit</button>
+                    <p class="mcId" style="display:none">@item.Id</p>
+                    <a asp-route-controller="MealCategory" asp-route-action="Delete" asp-route-id="@item.Id">delete</a>
+                </td>
+            </tr>
+        }
+        
+    </table>
+</div>
+<div class="pop-container">
+    <div style="display:none" class="category-pop add-pop">
+        <form asp-area="Admin" method="post" asp-controller="MealCategory" asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="pop-header">
+                <h4>Add Meal Category</h4>
+                <iconify-icon class="x" icon='mdi:alpha-x-box'></iconify-icon>
+            </div>
+            <div class='input-container ic1'>
+                <input id='add-name' asp-for="Name" class='input' type='text' placeholder=' ' />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <div class='cut'></div>
+                <label for='name' class='placeholder'>Name</label>
+            </div>
+            <button class='submit'>submit</button>
+        </form>
+    </div>
+    <div style="display:none" class="category-pop edit-pop">
+        <form asp-area="Admin" method="post" asp-controller="MealCategory" asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="pop-header">
+                <h4>Edit Meal Category</h4>
+                <iconify-icon class="x" icon='mdi:alpha-x-box'></iconify-icon>
+            </div>
+            <div class='input-container ic1'>
+                <input id='edit-name' asp-for="Name" class='input' type='text' placeholder=' ' />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <div class='cut'></div>
+                <label for='name' class='placeholder'>Name</label>
+            </div>
+            <button class='submit'>submit</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    const pop = $('.category-pop')
+    const container = $('.pop-container')
+
+    container.css({
+        'width': '100%',
+        'height': '100vh',
+        'zIndex': '10000',
+        'position': 'fixed'
+    })
+    container.hide()
+    $('body').prepend(container)
+
+    const addPop = $('.add-pop')
+    const editPop = $('.edit-pop')
+
+
+
+    addPop.css({
+        'position': 'fixed',
+        'zIndex': '100000'
+    })
+    const addBtn = $('#addBtn')
+    const editBtn = $('.editBtn')
+    const x = $('.x')
+    addBtn.click(function () {
+        container.show()
+        addPop.show()
+        //btn.hide()
+    })
+    editBtn.click(function () {
+        let id = this.nextElementSibling.innerHTML
+        $.ajax({
+            url: `https://localhost:7254/admin/mealcategory/update/${id}`,
+            type: 'get',
+            datatype: 'json',
+            cache: false,
+            data: { 'id': id },
+            success: function (p) {
+                $('#edit-name').val(p).text(p)
+                console.log(p)
+            },
+            error: function () {
+                alert('error occured');
+            }
+        });
+        container.show()
+        editPop.show()
+    })
+    x.click(function () {
+        container.hide()
+        pop.hide()
+        //btn.show()
+    })
+    
+</script>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

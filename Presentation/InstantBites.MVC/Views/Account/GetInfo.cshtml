@@ -1,0 +1,131 @@
+﻿@model UpdateClientCommandRequest
+
+<div id="accountEdit">
+    <form asp-action="GetInfo" method="post" asp-controller="Account" enctype="multipart/form-data">
+        <h1>Account Details</h1>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" name="returnUrl" value="ViewBag.ReturnUrl" text="ViewBag.ReturnUrl" />
+
+        <img src="@Model.SignedUrl" />
+        <input asp-for="SignedUrl" style="display:none" />
+
+        <div class="input-container">
+            <label for="img">Image</label>
+            <input asp-for="Image" id="img" type="file" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="name">Name</label>
+            <input asp-for="Name" class="ic2" id="name" type="text" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="surname">Surname</label>
+            <input asp-for="Surname" class="ic2" id="surname" type="text" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="email">Email</label>
+            <input asp-for="Email" class="ic2" id="email" type="text" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="username">Username</label>
+            <input asp-for="UserName" class="ic2" id="username" type="text" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="cPassword">Current Password</label>
+            <input asp-for="CurrentPassword" class="ic2" id="cPassword" type="password" />
+            <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="password">New Password</label>
+            <input asp-for="Password" class="ic2" id="password" type="password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="balance">Balance</label>
+            <input asp-for="Balance" class="ic2" id="balance" type="text" />
+            <span asp-validation-for="Balance" class="text-danger"></span>
+        </div>
+
+        <div class="input-container">
+            <label for="phone">Phone Number</label>
+            <input asp-for="PhoneNumber" class="ic2" id="phone" type="text" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <label for="map">Location</label>
+        <div id="map">
+        </div>
+        <input asp-for="Latitude" id="lat" type="text" style="display:none" />
+        <input asp-for="Longitude" id="lng" type="text" style="display:none" />
+        <span asp-validation-for="Longitude" class="text-danger"></span>
+
+        <button class="viewBtn" type="submit">Submit Changes</button>
+    </form>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuTUu96M3hmSwxkTVQvLH2LPU4l_lJhX4&callback=initMap&v=weekly"
+        defer></script>
+
+<script>
+    $('.gm-svpc').hide()
+
+    let map;
+
+    let mark;
+
+    function initMap() {
+
+        const myLatLng = { lat: @Model.Latitude, lng: @Model.Longitude};
+
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 40.409264, lng: 49.867092 },
+            zoom: 12,
+        });
+
+        myMark = new google.maps.Marker({
+            position: { lat: @Model.Latitude, lng: @Model.Longitude },
+            map
+        });
+
+        map.addListener("click", (event) => {
+            addMarker(event.latLng, map);
+            $('#lat').val(event.latLng.toJSON()["lat"]).text(event.latLng.toJSON()["lat"])
+            $('#lng').val(event.latLng.toJSON()["lng"]).text(event.latLng.toJSON()["lng"])
+            console.log($('#lat').val())
+            console.log($('#lng').val())
+        });
+
+        function addMarker(location, map) {
+            myMark.setMap(null)
+            if (mark != null)
+                mark.setMap(null)
+
+            mark = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+    }
+    window.initMap = initMap
+    $('#map').css({
+        'height': '300px'
+    })
+</script>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
